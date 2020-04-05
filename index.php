@@ -1,3 +1,19 @@
+
+<?php
+// Query params are:  
+
+require_once dirname(__FILE__) . '/kclick_client.php';
+$client = new KClickClient('http://45.32.153.125/api.php?', 'gjsdmhcnc8gltppbtvt9dpbgkdt4hcgl');
+$client->sendAllParams();       // to send all params from page query
+$client->forceRedirectOffer();       // redirect to offer if an offer is chosen
+// $client->param('sub_id_5', '123'); // you can send any params
+// $client->keyword('PASTE_KEYWORD');  // send custom keyword
+// $client->currentPageAsReferrer(); // to send current page URL as click referrer
+// $client->debug();              // to enable debug mode and show the errors
+// $client->execute();             // request to api, show the output and continue
+$client->executeAndBreak();     // to stop page execution if there is redirect or some output
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
 <head>
